@@ -1,0 +1,20 @@
+{
+    "Effect": "Deny",
+    "Action": [
+          "iam:AttachUserPolicy", 
+          "iam:CreateAccessKey", 
+          "iam:CreateUser", 
+          "iam:PutUserPolicy", 
+          "iam:DeleteSAMLProvider" 
+      ],
+    "Resource": [
+          "*" 
+      ],
+    "Condition": {
+          "ArnNotLike": {
+              "aws:PrincipalARN": [
+                  "arn:aws:iam::*:role/[ALLOWED_ROLE_NAME]"
+              ]
+          }
+      }
+  }

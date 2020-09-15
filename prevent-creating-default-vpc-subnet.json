@@ -1,0 +1,10 @@
+{
+    "Effect": "Deny",
+    "Action": [
+          "ec2:CreateDefaultSubnet", 
+          "ec2:CreateDefaultVpc" 
+      ],
+    "Resource": [
+          "*" 
+      ]
+  }

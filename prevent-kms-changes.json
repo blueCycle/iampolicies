@@ -1,0 +1,19 @@
+{
+    "Effect": "Deny",
+    "Action": [
+          "kms:ScheduleKeyDeletion",
+          "kms:DisableKey",
+          "kms:DisableKeyRotation"
+           
+      ],
+    "Resource": [
+          "*" 
+      ],
+    "Condition": {
+          "ArnNotLike": {
+              "aws:PrincipalArn": [
+                  "arn:aws:iam::*:role/[ENCRYPTION_DELETE_KEY_ROLE]"
+              ]
+          }
+      }
+  }
